@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Djescho/ProjectTech/issues"
   },
-  "homepage": "https://github.com/Djescho/ProjectTech#readme"
+  "homepage": "https://github.com/Djescho/ProjectTech#readme",
+  "dependencies": {
+    "spotify": "^0.3.0"
+  }
 }
