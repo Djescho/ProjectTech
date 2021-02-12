@@ -2,7 +2,7 @@ console.log("Hello world, lets spin the server up shall we?")
 const express = require('express')
 const app = express()
 const port = 3000
-
+git 
 //app.get kiest wat je bij welke url te zien krijgt.
 app.get('/', (req, res) => {
   res.send('Hi there, welcome!')
