@@ -5,7 +5,7 @@ const port = 3000
 
 //app.get kiest wat je bij welke url te zien krijgt.
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hi there, welcome!')
 })
 app.get('/hi', (req, res) => {
     res.send('OMG YOU FOND THE OTHER PAGE!!')
