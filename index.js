@@ -5,17 +5,25 @@ const port = 3000
 
 app.set('view enigine', 'ejs')
 app.set('views', 'views')
+
+app.use(express.static('public'))
+
 //app.get kiest wat je bij welke url te zien krijgt.
 app.get('/', (req, res) => {
 //   res.send('Hi there, welcome!')
     res.render('index.ejs')
+    res.render('../public/stylesheets/style.css')
 })
+app.get('/habba', (req, res) => {
+    res.send('Haters are bad allies')
+})
+
 app.use(function (req, res, next) {
     res.status(404).send("Sorry can't find that!")
   })
 
 //app.use laat weten welke mappen er middels urls toegangelijk zijn.
-app.use(express.static('public'))
+
 
 app.listen(port, () => {
   console.log(`BTapp listening at http://localhost:${port}`)
