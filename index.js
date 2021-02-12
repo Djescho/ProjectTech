@@ -2,14 +2,17 @@ console.log("Hello world, lets spin the server up shall we?")
 const express = require('express')
 const app = express()
 const port = 3000
-git 
+
+app.set('view enigine', 'ejs')
+app.set('views', 'views')
 //app.get kiest wat je bij welke url te zien krijgt.
 app.get('/', (req, res) => {
-  res.send('Hi there, welcome!')
+//   res.send('Hi there, welcome!')
+    res.render('index.ejs')
 })
-app.get('/hi', (req, res) => {
-    res.send('OMG YOU FOND THE OTHER PAGE!!')
-})
+app.use(function (req, res, next) {
+    res.status(404).send("Sorry can't find that!")
+  })
 
 //app.use laat weten welke mappen er middels urls toegangelijk zijn.
 app.use(express.static('public'))
