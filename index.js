@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-app.set('view enigine', 'ejs')
+app.set('view enigine', 'handlebars')
 app.set('views', 'views')
 
 app.use(express.static('public'))
@@ -12,7 +12,6 @@ app.use(express.static('public'))
 app.get('/', (req, res) => {
 //   res.send('Hi there, welcome!')
     res.render('index.ejs')
-    res.render('../public/stylesheets/style.css')
 })
 app.get('/habba', (req, res) => {
     res.send('Haters are bad allies')

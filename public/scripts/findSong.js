@@ -1,4 +1,5 @@
 var Spotify = require('node-spotify-api');
+let ejs = require('ejs')
 let value = toString()
 var spotify = new Spotify({
   id: 'd5e588b968774c59b1e8b2eebf2a8514',
