@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-app.set('view enigine', 'handlebars')
+app.set('view enigine', 'hbs')
 app.set('views', 'views')
 
 app.use(express.static('public'))
@@ -11,7 +11,7 @@ app.use(express.static('public'))
 //app.get kiest wat je bij welke url te zien krijgt.
 app.get('/', (req, res) => {
 //   res.send('Hi there, welcome!')
-    res.render('index.ejs')
+    res.render('index.hbs')
 })
 app.get('/habba', (req, res) => {
     res.send('Haters are bad allies')
