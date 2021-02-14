@@ -5,15 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/match.css">
 </head>
 <body>
-    <h1>HI THERE {{firstname}}</h1>
-    <p>If this works, you heave succesfully landed on my website</p>
-    <h2>can i change this live?</h2>
-    <p>lets see if we can add a stylesheet</p>
-    <div></div>
-    <script src="../public/scripts/findSong.js"></script>
+    <header>
+        <a href="./profile.ejs">
+            <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 55 55">
+                <g id="Profile_Large" data-name="Profile Large" transform="translate(0 0)">
+                  <circle id="Ellipse_96" data-name="Ellipse 96" cx="27.5" cy="27.5" r="27.5" transform="translate(0 0)" fill="#ff5e00"/>
+                  <path id="Icon_metro-cross" data-name="Icon metro-cross" d="M24.01,19.31h0l-6.564-6.564L24.01,6.182h0a.678.678,0,0,0,0-.956l-3.1-3.1a.678.678,0,0,0-.956,0h0L13.389,8.689,6.825,2.126h0a.678.678,0,0,0-.956,0l-3.1,3.1a.678.678,0,0,0,0,.956h0l6.564,6.564L2.768,19.31h0a.678.678,0,0,0,0,.956l3.1,3.1a.678.678,0,0,0,.956,0h0L13.389,16.8l6.564,6.564h0a.678.678,0,0,0,.956,0l3.1-3.1a.678.678,0,0,0,0-.956Z" transform="translate(14.315 14.958)" fill="#fff"/>
+                </g>
+              </svg>              
+        </a>
+    </header>
+    <main>
+        
+            <div id="matchingProfile">
+                <h1>Djescho</h1>
+                <h2>22</h2>
+            </div>
+            <div id="card">
+            
+            <div id="aboutMe">
+                <p>Hi, ik ben Djescho. Ik ben een leuke jongen die van een van een babbeltje en gezelligheid houdt. Ik ben echt fan van afrikaanse muziek sooo..... hit that beat shady</p>
+            </div>
+
+            <div id="matchedMusic">
+                <h3>Matched music</h3>
+                <ul>
+                    <li class="matchedMusicCard">
+                        <a href="#">
+                            <img src="" alt="hier moet een afbeelding komen">
+                        </a>
+                        <div>
+                            <h4 id="songTitle">Psalm 35</h4>
+                            <h5 id="songArtist">Wendy Shay</h5>
+                        </div>
+
+                    </li>
+                    <li class="matchedMusicCard">
+
+                    </li>
+                    <li class="matchedMusicCard">
+
+                    </li>
+                    <li class="matchedMusicCard">
+
+                    </li>
+                </ul>
+            </div>
+
+            <button id="matchLocation"><svg xmlns="http://www.w3.org/2000/svg" width="20.342" height="18.924" viewBox="0 0 20.342 18.924">
+                <path id="Icon_awesome-shoe-prints" data-name="Icon awesome-shoe-prints" d="M4.866,4.055h.811V.811H4.866a1.622,1.622,0,0,0,0,3.244ZM0,10.543a1.622,1.622,0,0,0,1.622,1.622h.811V8.921H1.622A1.622,1.622,0,0,0,0,10.543ZM8.552,7.3A5.183,5.183,0,0,0,5.9,8.11a3.873,3.873,0,0,1-2.654.811v3.244l1.458.4a10.356,10.356,0,0,0,2.035.381,8.816,8.816,0,0,0,2.473-.157c2.774-.6,3.765-1.916,3.765-3.062,0-1.622-2.133-2.433-4.423-2.433Zm3.9-7.116A8.806,8.806,0,0,0,9.981.025,10.375,10.375,0,0,0,7.946.406l-1.458.4V4.055a3.874,3.874,0,0,1,2.654.811,5.183,5.183,0,0,0,2.654.811c2.29,0,4.423-.811,4.423-2.433,0-1.146-.991-2.466-3.765-3.062Z" transform="matrix(0.891, -0.454, 0.454, 0.891, 0, 7.363)" fill="#fff"/>
+              </svg>Match location</button>
+        </div>
+
+        <div id="matchButtons">
+            <button id="like" class="matchButtons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="29.25" height="28.125" viewBox="0 0 29.25 28.125">
+                    <path id="Icon_ionic-ios-heart" data-name="Icon ionic-ios-heart" d="M24.75,3.938h-.07A8,8,0,0,0,18,7.594a8,8,0,0,0-6.68-3.656h-.07a7.949,7.949,0,0,0-7.875,7.945,17.115,17.115,0,0,0,3.361,9.33C10.969,27,18,32.063,18,32.063S25.031,27,29.264,21.213a17.115,17.115,0,0,0,3.361-9.33A7.949,7.949,0,0,0,24.75,3.938Z" transform="translate(-3.375 -3.938)" fill="#fff"/>
+                  </svg>                      
+            </button>
+            <button id="dislike" class="matchButtons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30.849" height="30.849" viewBox="0 0 30.849 30.849">
+                    <path id="Icon_metro-cross" data-name="Icon metro-cross" d="M33.138,26.711h0l-9.358-9.358,9.358-9.358h0a.966.966,0,0,0,0-1.363L28.717,2.21a.967.967,0,0,0-1.363,0h0L18,11.568,8.637,2.21h0a.966.966,0,0,0-1.363,0L2.852,6.631a.966.966,0,0,0,0,1.363h0l9.358,9.358L2.852,26.711h0a.966.966,0,0,0,0,1.363l4.421,4.421a.966.966,0,0,0,1.363,0h0L18,23.136l9.358,9.358h0a.966.966,0,0,0,1.363,0l4.421-4.421a.966.966,0,0,0,0-1.363Z" transform="translate(-2.571 -1.928)" fill="#fff"/>
+                  </svg>                      
+            </button>
+        </div>
+    </main>
+    <footer>
+        
+    </footer>
     
 </body>
 </html>
