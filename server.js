@@ -15,16 +15,20 @@ app.get('/', (req, res) => {
 app.get('/profile', (req, res) => {
     res.render('profile.ejs')
 })
-app.get('/habba', (req, res) => {
-    res.send('Haters are bad allies')
+app.get('/search', (req, res) => {
+  res.render('search.ejs')
 })
+
 
 app.use(function (req, res, next) {
     res.status(404).send("Sorry can't find that!")
   })
 
 //app.use laat weten welke mappen er middels urls toegangelijk zijn.
-
+app.post('/get-query', (req, res) => {
+  console.log(req)
+  return
+})
 
 app.listen(port, () => {
   console.log(`BTapp listening at http://localhost:${port}`)
