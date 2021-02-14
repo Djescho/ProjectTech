@@ -4,18 +4,18 @@
     box-sizing: border-box;
 }
 body {
+    font-family: 'Alegreya Sans', 'Arial', Sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     background-color: thistle;
     background-image: url('../images/profile.jpg');
     background-repeat: no-repeat;
     background-size: 110%;
     background-position: center center;
     background-attachment: fixed;
-    font-family: Arial, Helvetica, sans-serif;
     color: #FF5E00;
 }
 header {
@@ -24,6 +24,8 @@ header {
 main {
     margin-top: auto;
     margin-bottom: 5em;
+    background-image: url('');
+    
 }
 #card {
     position: relative;
@@ -31,19 +33,15 @@ main {
     height: 200px;
     width: 300px;
     overflow-y: scroll;
-
     background-color: #FFFFFF;
     border-radius: 20px;
-    margin-bottom: 5em;
+    margin-bottom: 1.5em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 #matchingProfile {
-    position: absolute;
-    left: 0;
-    top: -3em;
-
+    margin-bottom: 1em;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -97,18 +95,20 @@ main {
 
 
 #matchButtons {
-    width: calc(100% + 4em);
-    bottom: -2em;
-    left: -2em;
-    position: absolute;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
+h1 {
+    font-family: 'Alegreya Sans SC', 'Arial', sans Sans-serif;
+}
 h4 {
     font-size: 10px;
+    font-family: 'Alegreya Sans SC', 'Arial', sans Sans-serif;
 }
 h5 {
     font-size: 8px;
+    font-family: 'Alegreya Sans SC', 'Arial', sans Sans-serif;
 }
 .matchButtons {
     background-color:orangered;
