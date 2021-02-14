@@ -11,12 +11,13 @@ body {
     align-items: center;
     height: 90vh;
     background-color: thistle;
-    background-image: url('../images/profile.jpg');
+    background-image: url('../images/djescho.profile.jpg');
     background-repeat: no-repeat;
-    background-size: 110%;
+    background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     color: #FF5E00;
+    
 }
 header {
     margin-top: 2em;
@@ -24,8 +25,8 @@ header {
 main {
     margin-top: auto;
     margin-bottom: 5em;
-    background-image: url('');
     
+
 }
 #card {
     position: relative;
