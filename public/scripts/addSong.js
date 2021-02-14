@@ -5,7 +5,7 @@ let value = toString()
 
 let spotify = new Spotify({
   id: 'd5e588b968774c59b1e8b2eebf2a8514',
-  secret: '06c4ec91a44d4605923d9f4c687c6898'
+  
 });
 
 
