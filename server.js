@@ -2,6 +2,10 @@ console.log("Hello world, lets spin the server up shall we?")
 const express = require('express')
 const app = express()
 const port = 3000
+const fs = require('fs')
+// var songData = require('./public/scripts/addSong.js')
+// console.log(songData)
+
 
 app.set('view enigine', 'ejs')
 app.set('views', 'views')
@@ -10,8 +14,11 @@ app.use(express.static('public'))
 
 //app.get kiest wat je bij welke url te zien krijgt.
 app.get('/', (req, res) => {
-    res.render('index.ejs')
-})
+  
+    res.render('index.ejs', {data : {name: "shady"}})
+    
+    
+  })
 app.get('/profile', (req, res) => {
     res.render('profile.ejs')
 })

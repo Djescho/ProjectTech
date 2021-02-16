@@ -1,11 +1,10 @@
 // let button = document.querySelector('#addSong');
 let Spotify = require('node-spotify-api');
 let ejs = require('ejs')
-let value = toString()
 
 let spotify = new Spotify({
   id: 'd5e588b968774c59b1e8b2eebf2a8514',
-  secret: ''
+  secret: 'a secret darling'
 });
 
 
@@ -30,8 +29,10 @@ console.log(data)
 let x = data.tracks.items[0];
 console.log(x)
 
-let songName = data.tracks.items[0].name
-console.log(songName)
+let songName = data.tracks.items[0].name;
+console.log(songName);
+
+
 
 songArtistList = data.tracks.items[0].artists
 // console.log(songArtistList)
@@ -41,7 +42,10 @@ for (let i = 0; i < songArtistList.length; i++) {
 }
 songID = data.tracks.items[0].id
 console.log('Song ID: ' + songID)
+module.exports = data.tracks;
 
 });
+
+
 // }
 // button.addEventListener('click', addSong);
