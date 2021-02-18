@@ -27,24 +27,27 @@
             <div id="profileImagePlaceholder"></div>
             <h1 id="name">Djescho</h1>
             <h2 id="age">22</h2>
-        <form action="">
-            <h2>Ik ben op zoek naar een...</h2>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Man</label><br>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Vrouw</label><br>
-            <input type="radio" id="other" name="gender" value="other">
-            <label for="other">Non-binary</label>
-            <h2>Tussen de...</h2>
-            <input type="number">
-            <h3>Èn de</h3>
-            <input type="number">
-            <h2>Die net als ik naar deze muziek luister</h2>
-            <ul>
-                <li>
-
-                </li>
-            </ul>
+        <form action="http://localhost:3000/profile" method="POST">
+            <div>
+                <h2>Ik ben op zoek naar een...</h2>
+                <label for="male">man</label>
+                <input type="radio" id="matchgender" name="gender" id="male">
+                <label for="female">vrouw</label>
+                <input type="radio" id="matchgender" name="ge`nder" id="female">
+                <label for="bi">man en vrouw</label>
+                <input type="radio" id="matchgender" name="gender" id="bi">
+                <label for="nonbin">non-binary</label>
+                <input type="radio" id="matchgender" name="gender" id="nonbin">
+            </div>
+            <div>
+                <label for="matchagemin">tussen de</label>
+                <input type="number" id="matchagemin" min="18" max="99">
+                <label for="matchagemax">en de</label>
+                <input type="number" id="matchagemax" min="18" max="99">
+            </div>
+            <button type="submit">Opslaan</button>
+        </form>
+        <div>
             <button id="addSong">
                 <svg xmlns="http://www.w3.org/2000/svg" width="113.137" height="113.137" viewBox="0 0 113.137 113.137">
                     <g id="Profile_Large" data-name="Profile Large" transform="translate(56.569) rotate(45)">
@@ -53,10 +56,7 @@
                     </g>
                 </svg>
             </button>
-            <h4>Voeg nummer muziek toe</h4>
-            <input type="submit" value="Opslaan">
-        </form>
-
+        </div>
     </main>
     <footer>
         <button>
