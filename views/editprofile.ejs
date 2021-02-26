@@ -25,12 +25,24 @@
     </header>
     <main>
             <div id="profileImagePlaceholder"></div>
-            <h1>ik ben op zoek naar een:</h1>
-            <h2><%= data.gender %></h2>
-            <h1>Tussen de</h1>
-            <h2><%= data.age[0]%></h2>
-            <h1>en de</h1>
-            <h2><%= data.age[1] %></h2>
+            <h1 id="name">Djescho</h1>
+            <h2 id="age">22</h2>
+        <form action="/profile" method="POST">
+            <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">Other</label>
+  <input type="number" id="minage" name="age" value="min">
+  <label for="minage">Minimale leeftijd</label>
+  <input type="number" id="maxage" name="age" value="max">
+  <label for="maxage">Maximale leeftijd</label>
+
+
+  <button type="submit">submit</button>
+        </form>
+        <div>
             <button id="addSong">
                 <svg xmlns="http://www.w3.org/2000/svg" width="113.137" height="113.137" viewBox="0 0 113.137 113.137">
                     <g id="Profile_Large" data-name="Profile Large" transform="translate(56.569) rotate(45)">

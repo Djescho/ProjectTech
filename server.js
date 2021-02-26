@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 const fs = require('fs')
-let bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 // var songData = require('./public/scripts/addSong.js')
 // console.log(songData)
 
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
     
   })
 app.get('/profile', (req, res) => {
-    res.render('profile.ejs')
+    res.render('editprofile.ejs')
 })
 app.get('/search', (req, res) => {
   res.render('search.ejs')
@@ -37,7 +37,8 @@ app.get('/search', (req, res) => {
 
 app.post('/profile', (req, res) => {
   console.log("something has ben submited!")
-  res.json({status: 'ok'})
+  console.log(req.body);
+  res.render('profile.ejs', {data : req.body})
 })
 
 app.use(function (req, res, next) {
