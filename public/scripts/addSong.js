@@ -4,7 +4,7 @@ let ejs = require('ejs')
 
 let spotify = new Spotify({
   id: 'd5e588b968774c59b1e8b2eebf2a8514',
-  secret: 'a secret'
+  secret: 'xxx'
 });
 
 function searchSong() {
@@ -13,7 +13,7 @@ function searchSong() {
     inputArray.push(process.argv[i])
    }
    let inputString = inputArray.join(' ');
-   cpnsole.log('searched for' + inputArray);
+   console.log('searched for' + inputArray);
    //start search on spotify
    spotify.search({ type: 'track', query: inputString }, function(err, data) {
     if (err) {
@@ -36,7 +36,4 @@ function searchSong() {
     let songID = data.tracks.items[0].id;
     console.log('Song ID: ' + songID);
 
-    module.exports = songData {
-      title: songName,
-      artists: songArtist
     }

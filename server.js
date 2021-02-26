@@ -12,7 +12,8 @@ app.set('view enigine', 'ejs')
 app.set('views', 'views')
 
 app.use(express.static('public'))
-
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 //app.get kiest wat je bij welke url te zien krijgt.
 app.get('/', (req, res) => {
   
@@ -28,15 +29,22 @@ app.get('/search', (req, res) => {
 })
 
 
-app.use(function (req, res, next) {
-    res.status(404).send("Sorry can't find that!")
-  })
+
 
 //app.use laat weten welke mappen er middels urls toegangelijk zijn.
+
+
+
 app.post('/profile', (req, res) => {
-  console.log("sonething has ben submited!")
+  console.log("something has ben submited!")
+  res.json({status: 'ok'})
+})
+
+app.use(function (req, res, next) {
+  res.status(404).send("Sorry can't find that!")
 })
 
 app.listen(port, () => {
   console.log(`BTapp listening at http://localhost:${port}`)
 })
+
