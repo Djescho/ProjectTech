@@ -4,6 +4,16 @@ In dit project ga ik een webapp bouwen. Omdat ik verder geen codeer ervaring heb
 
 ![Logo](./public/images/LOGO.png)
 
-## Achtergrond
+### Achtergrond
 
 Dit project doe voor mijn tech specialisatie voor mijn opleiding CMD (Communicatie en multimedia design). Mijn doel is om een goed begrip van nodeJS, JavaScript en webdevelopment in het algemeen te krijgen.
+
+## Installatie
+
+!!nog niet compleet!!
+
+```
+{
+  npm install
+}
+```
