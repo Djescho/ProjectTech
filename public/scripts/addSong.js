@@ -1,39 +1,38 @@
-// let button = document.querySelector('#addSong');
-let Spotify = require('node-spotify-api');
-let ejs = require('ejs')
+let Spotify = require("node-spotify-api");
 
 let spotify = new Spotify({
-  id: 'd5e588b968774c59b1e8b2eebf2a8514',
-  secret: process.env.APIKEY
+  id: "d5e588b968774c59b1e8b2eebf2a8514",
+  secret: "xxx",
 });
 
-function searchSong() {
-  let inputArray = [];
-  for (let i = 2; i <process.argv.length; i++) {
-    inputArray.push(process.argv[i])
-   }
-   let inputString = inputArray.join(' ');
-   console.log('searched for' + inputArray);
-   //start search on spotify
-   spotify.search({ type: 'track', query: inputString }, function(err, data) {
-    if (err) {
-      return console.log('Error occurred: ' + err);
-    } 
-    console.log("de zoekopdracht levert de volgende resultaten: " + data)
+// function searchSong() {
+let inputArray = [];
+for (let i = 2; i < process.argv.length; i++) {
+  inputArray.push(process.argv[i]);
+}
+let inputString = inputArray.join(" ");
+console.log("searched for: " + inputString);
 
-    //aan de slag met het eerste zoekresultaat
-    let songName = data.tracks.item[0].name;
-    console.log("Track Title: " + songName);
+//start search on spotify
+spotify.search({ type: "track", query: inputString }, function (err, data) {
+  if (err) {
+    return console.log("Error occurred: " + err);
+  }
+  console.log("de zoekopdracht levert de volgende resultaten: ");
 
-    let songArtist = [];
-    let songArtistList = data.tracks.items[0].artists;
-    for (let i = 0; i < songArtistList.length; i++) { 
-      songArtist.push(songArtistList[i].name);
-    }
+  //aan de slag met het eerste zoekresultaat
+  let songName = data.tracks.items[0].name;
+  console.log("Track Title: " + songName);
 
-    console.log("Artist(s): " + songArtist);
+  let songArtist = [];
+  let songArtistList = data.tracks.items[0].artists;
+  for (let i = 0; i < songArtistList.length; i++) {
+    songArtist.push(songArtistList[i].name);
+  }
 
-    let songID = data.tracks.items[0].id;
-    console.log('Song ID: ' + songID);
+  console.log("Artist(s): " + songArtist);
 
-    }
+  let songID = data.tracks.items[0].id;
+  console.log("Song ID: " + songID);
+});
+// }
