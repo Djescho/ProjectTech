@@ -1,6 +1,7 @@
 # ProjectTech
 
 In dit project ga ik een webapp bouwen. Omdat ik verder geen codeer ervaring heb zal dit een hele opgave worden, maar dit is stap voor stap in de wiki te volgen. De matchingapp die ik ga bouwen heet MusicMatch, en wordt een matchingapp op basis van muziek smaak.
+
 ![Logo](./public/images/LOGO.png)
 
 ## Achtergrond
