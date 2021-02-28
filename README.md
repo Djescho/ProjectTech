@@ -1,4 +1,4 @@
-# ProjectTech
+# Music Match | ProjectTech
 
 In dit project ga ik een webapp bouwen. Omdat ik verder geen codeer ervaring heb zal dit een hele opgave worden, maar dit is stap voor stap in de wiki te volgen. De matchingapp die ik ga bouwen heet MusicMatch, en wordt een matchingapp op basis van muziek smaak.
 
@@ -13,7 +13,5 @@ Dit project doe voor mijn tech specialisatie voor mijn opleiding CMD (Communicat
 !!nog niet compleet!!
 
 ```
-{
   npm install
-}
 ```
