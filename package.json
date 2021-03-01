@@ -21,6 +21,7 @@
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "handlebars": "^4.7.6",
+    "mongodb": "^3.6.4",
     "node-spotify-api": "^1.1.1",
     "spotify": "^0.3.0"
   },
