@@ -6,29 +6,35 @@ const url = process.env.DATABASEKEY;
 const client = new MongoClient(url);
 
 // The database to use
-const dbName = "test";
+const dbName = "musicmatch";
 
 async function run() {
+  //informatie over try catch https://nodejs.org/en/knowledge/errors/what-is-try-catch/
+
   try {
     await client.connect();
     console.log("Connected correctly to server");
     const db = client.db(dbName);
 
     // Use the collection "people"
-    const col = db.collection("people");
+    const col = db.collection("users");
 
     // Construct a document
-    let personDocument = {
-      name: { first: "Alan", last: "Turing" },
-      birth: new Date(1912, 5, 23), // June 23, 1912
-      death: new Date(1954, 5, 7), // June 7, 1954
-      contribs: ["Turing machine", "Turing test", "Turingery"],
-      views: 1250000,
+    let userProfile = {
+      name: { first: "Djescho", last: "Mananga" },
+      age: 22,
+      gender: "man",
+      songIDs: [1234, 2345, 7888],
+      agePrefrence: { min: 21, max: 26 },
+      sexPrefrence: "man",
     };
 
     // Insert a single document, wait for promise so we can read it back
-    const p = await col.insertOne(personDocument);
+    // Insert data
+
+    const p = await col.insertOne(userProfile);
     // Find one document
+    // print The inserted data
     const myDoc = await col.findOne();
     // Print to the console
     console.log(myDoc);
