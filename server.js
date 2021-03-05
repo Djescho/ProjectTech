@@ -5,18 +5,20 @@ const port = 3000;
 const fs = require("fs");
 const bodyParser = require("body-parser");
 const path = require("path");
+
 require("dotenv").config();
-// var songData = require('./public/scripts/addSong.js')
-// console.log(songData)
 
 app.set("view enigine", "ejs");
 app.set("views", "views");
 
 app.use(express.static("public"));
+
+//bodyparser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //app.get kiest wat je bij welke url te zien krijgt.
+
 app.get("/", (req, res) => {
   res.render("index.ejs", { data: { name: "Djescho" } });
 });

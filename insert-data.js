@@ -27,6 +27,8 @@ async function run() {
       songIDs: [1234, 2345, 7888],
       agePrefrence: { min: 21, max: 26 },
       sexPrefrence: "man",
+      description:
+        "a whole lot of nothing here. You know who I am, i'm everywhere and nowehre at the same time, who cool is that",
     };
 
     // Insert a single document, wait for promise so we can read it back
