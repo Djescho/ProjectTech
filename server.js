@@ -11,29 +11,6 @@ const { render } = require("ejs");
 var logedinuser = "";
 require("dotenv").config();
 
-// const db = require("./db");
-// const dbName = "musicmatch";
-// const collectionName = "test";
-
-// db.initialize(
-//   dbName,
-//   collectionName,
-//   function (dbCollection) {
-//     // successCallback
-//     // get all items
-//     dbCollection.find().toArray(function (err, result) {
-//       if (err) throw err;
-//       console.log(result);
-//     });
-
-//     // << db CRUD routes >>
-//   },
-//   function (err) {
-//     // failureCallback
-//     throw err;
-//   }
-// );
-
 app.set("view enigine", "ejs");
 app.set("views", "views");
 
@@ -47,6 +24,7 @@ app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   logedinuser = "";
+  console.log(logedinuser);
   res.render("login.ejs");
 });
 
@@ -58,13 +36,10 @@ app.get("/editprofile", async (req, res) => {
   console.log(loadedProfile);
   res.render("editprofile.ejs", { data: loadedProfile });
 });
+
 app.get("/newprofile", (req, res) => {
   res.render("newprofile.ejs");
 });
-
-//app.use laat weten welke mappen er middels urls toegangelijk zijn.
-
-//Wanner er een nieuw profiel wordt aangemaakt
 
 app.post("/newProfile", (req, res) => {
   console.log("Er is een nieuw profiel toegevoegd");
@@ -76,11 +51,6 @@ app.post("/newProfile", (req, res) => {
   res.render("index.ejs", { data: userProfile });
 });
 
-// app.post("/updateProfile", (req, res) => {
-//   console.log("er heeft een profielupdate plaats geveonden");
-//   res.render("index.ejs");
-// });
-//login scherm
 app.post("/login", async (req, res) => {
   console.log("er wordt ingelogd");
   let input = req.body.inlognaam;
@@ -97,6 +67,7 @@ app.post("/saveProfile", async (req, res) => {
   console.log(input);
   if (input.delete == "on") {
     console.log("uw profiel wordt verwijdert");
+
     const del = await dbConnetion.deleteUser(input);
     logedinuser = "";
     res.render("login.ejs");

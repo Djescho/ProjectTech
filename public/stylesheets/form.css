@@ -89,7 +89,7 @@ form #age > .fieldCluster:last-of-type label {
   border-radius: none;
   padding-left: 1em;
   width: 100%;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 form #matchMusic .fieldCluster {
   display: flex;

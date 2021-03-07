@@ -1,63 +1,79 @@
+const { precompile } = require("handlebars");
 let Spotify = require("node-spotify-api");
 require("dotenv").config();
 
 let spotify = new Spotify({
   id: "d5e588b968774c59b1e8b2eebf2a8514",
-  secret: "5c182bd48b7e40b7ab1dbd1e9577d1f1",
+  secret: process.env.SPOTAPIKEY;
 });
-userInput = ["wendy shay wedding song", "fantana so what", "zuchu sukari"];
-finalObject = [];
 
-console.log(userInput.length);
+let songObject = [];
 //start looping through input
-for (let i = 0; i < userInput.length; i++) {
-  console.log("itteration: " + i);
-  //start search on spotify
-  spotify.search({ type: "track", query: userInput[i] }, function (err, data) {
+function convertMusic(inputQuery) {
+  spotify.search({ type: "track", query: inputQuery }, function (err, data) {
     if (err) {
       return console.log("Error occurred: " + err);
     }
-    //error prevention
-    if (data.tracks.total == 0) {
-      console.log("no results for " + userInput);
-    } else {
-      console.log(
-        "de zoekopdracht " + userInput[i] + " levert de volgende resultaten: "
-      );
-      console.log(data);
+    let songdata = data.tracks.items[0];
+    // console.log(songdata);
+    let songartist = songdata.album.artists[0].name;
+    console.log(songartist);
+    let artistArray = songdata.artists;
+    // console.log(artistArray);
 
-      //aan de slag met het eerste zoekresultaat
-      let songName = data.tracks.items[0].name;
-      console.log("Track Title: " + songName);
-
-      let songArtist = [];
-      let songArtistList = data.tracks.items[0].artists;
-      for (let i = 0; i < songArtistList.length; i++) {
-        songArtist.push(songArtistList[i].name);
+    if (artistArray.length > 1) {
+      //als er meerde artiesten op een track zitten
+      console.log("meer dan 1 artietst");
+      let allArtists = [];
+      //loopt door alle arteist objecten om hun naam op te halen
+      for (let i = 0; i < artistArray.length; i++) {
+        let artist = artistArray[i].name;
+        console.log(artist);
+        allArtists.push(artist);
       }
-
-      console.log("Artist(s): " + songArtist);
-
-      let songID = data.tracks.items[0].id;
-      console.log("Song ID: " + songID);
-
-      songObject = {
-        title: songName,
-        artists: songArtist,
-        songID: songID,
+      console.log("artiesten", allArtists);
+      //object obouwen
+      let trackobject = {
+        title: songdata.name,
+        artist: allArtists,
+        coverURL: songdata.album.images[0].url,
+        matchID: songdata.album.id,
       };
-      console.log("totale object:");
-      console.log(songObject);
-
-      finalObject.push(songObject);
-      console.log("query " + i + "has been pushed");
+      console.log(trackobject);
+      songObject.push(trackobject);
+    } else {
+      //als er maar een artiest op een track zit
+      console.log("Artiest " + songartist);
+      let trackobject = {
+        title: songdata.name,
+        artist: songartist,
+        coverURL: songdata.album.images[0].url,
+        matchID: songdata.album.id,
+      };
+      console.log("trackopject:", trackobject);
+      songObject.push(trackobject);
     }
-    if (i === userInput.length - 1) {
-      console.log("final combined object:");
-      console.log(finalObject);
-    }
-    //sluit spotify serarch
   });
-
-  //sluit loop
 }
+function inputLoop(inputString) {
+  for (let i = 0; i < inputString.length; i++) {
+    convertMusic(inputString[i]);
+  }
+  //zodra de functie klaar is geberut het volgende
+  console.log("Ready for export", songObject);
+  module.exports.songObject = songObject;
+  console.log(songObject);
+  return;
+}
+
+inputLoop([
+  "the war on drugs pain",
+  "nicki miniaj megatron",
+  "editors magazine",
+  "roses en my sons simgm",
+  "run for cover the killers",
+  "oscar and the wolf fever",
+  "7 rings ariana grande",
+  "rhodes you a& i",
+]);
+// module.exports.inputLoop = inputLoop;

@@ -10,8 +10,6 @@ Dit project doe voor mijn tech specialisatie voor mijn opleiding CMD (Communicat
 
 ## Installatie
 
-!!nog niet compleet!!
-
 ```
   npm install
 ```
