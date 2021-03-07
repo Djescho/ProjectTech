@@ -5,8 +5,10 @@ const port = 3000;
 const fs = require("fs");
 const bodyParser = require("body-parser");
 const path = require("path");
-const { MongoClient } = require("mongodb");
 
+const dbConnetion = require("./db");
+const { render } = require("ejs");
+var logedinuser = "";
 require("dotenv").config();
 
 // const db = require("./db");
@@ -44,11 +46,17 @@ app.use(bodyParser.json());
 //app.get kiest wat je bij welke url te zien krijgt.
 
 app.get("/", (req, res) => {
+  logedinuser = "";
   res.render("login.ejs");
 });
 
-app.get("/editprofile", (req, res) => {
-  res.render("editprofile.ejs");
+app.get("/editprofile", async (req, res) => {
+  console.log("data wordt opgehaald");
+  let input = logedinuser;
+  console.log(input);
+  const loadedProfile = await dbConnetion.getUser(input);
+  console.log(loadedProfile);
+  res.render("editprofile.ejs", { data: loadedProfile });
 });
 app.get("/newprofile", (req, res) => {
   res.render("newprofile.ejs");
@@ -60,39 +68,42 @@ app.get("/newprofile", (req, res) => {
 
 app.post("/newProfile", (req, res) => {
   console.log("Er is een nieuw profiel toegevoegd");
+
   let userProfile = req.body;
   console.log(userProfile);
-
-  const url = process.env.DATABASEKEY;
-  const client = new MongoClient(url);
-  const dbName = "musicmatch";
-
-  async function uploadData() {
-    //informatie over try catch https://nodejs.org/en/knowledge/errors/what-is-try-catch/
-    try {
-      await client.connect();
-      const db = client.db(dbName);
-      const col = db.collection("test");
-      console.log("Connected correctly to server");
-
-      const p = await col.insertOne(userProfile);
-    } catch (err) {
-      console.log(err.stack);
-    } finally {
-      await client.close();
-    }
-  }
-
-  uploadData().catch(console.dir);
-
+  dbConnetion.createUser(userProfile);
+  logedinuser = userProfile.name;
   res.render("index.ejs", { data: userProfile });
 });
-app.post("/updateProfile", (req, res) => {
-  console.log("er heeft een profielupdate plaats geveonden");
-  res.render("index.ejs");
+
+// app.post("/updateProfile", (req, res) => {
+//   console.log("er heeft een profielupdate plaats geveonden");
+//   res.render("index.ejs");
+// });
+//login scherm
+app.post("/login", async (req, res) => {
+  console.log("er wordt ingelogd");
+  let input = req.body.inlognaam;
+  console.log(input);
+  const loadedProfile = await dbConnetion.getUser(input);
+  console.log(loadedProfile);
+  logedinuser = loadedProfile.name;
+  res.render("index.ejs", { data: loadedProfile });
 });
-app.post("/login", (req, res) => {
-  res.render("index.ejs");
+
+app.post("/saveProfile", async (req, res) => {
+  console.log("er wordt een profiel ingeladen");
+  let input = req.body;
+  console.log(input);
+  if (input.delete == "on") {
+    console.log("uw profiel wordt verwijdert");
+    const del = await dbConnetion.deleteUser(input);
+    logedinuser = "";
+    res.render("login.ejs");
+  } else {
+    const save = await dbConnetion.updateUser(input);
+    res.render("index.ejs", { data: input });
+  }
 });
 
 app.use(function (req, res, next) {

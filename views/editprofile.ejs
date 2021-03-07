@@ -19,12 +19,24 @@
         <div class="container">
           <div class="fieldCluster">
             <label for="name">Naam</label>
-            <input type="text" id="name" name="name" />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder=""
+              value="<%= data.name %>"
+            />
           </div>
 
           <div class="fieldCluster">
             <label for="age">Leeftijd</label>
-            <input type="number" id="age" class="age" />
+            <input
+              type="number"
+              id="age"
+              class="age"
+              name="age"
+              value="<%= data.age %>"
+            />
           </div>
         </div>
 
@@ -34,14 +46,20 @@
           id="description"
           placeholder="Vertel wat over jezelf!"
         >
-Vertel wat over jezelf</textarea
+<%= data.description %></textarea
         >
 
         <h3>Mijn geslacht</h3>
         <div class="container" id="genderList">
           <div class="fieldCluster">
             <label for="man">Man</label>
-            <input type="radio" name="myGender" value="man" id="man" />
+            <input
+              type="radio"
+              name="myGender"
+              checked=""
+              value="man"
+              id="man"
+            />
           </div>
 
           <div class="fieldCluster">
@@ -62,7 +80,7 @@ Vertel wat over jezelf</textarea
             <input
               type="checkbox"
               name="lookingGender"
-              value="lookingMan"
+              value=" a Man"
               id="lookingMan"
             />
           </div>
@@ -72,7 +90,7 @@ Vertel wat over jezelf</textarea
             <input
               type="checkbox"
               name="lookingGender"
-              value="lookingWoman"
+              value="a Woman"
               id="lookingWoman"
             />
           </div>
@@ -82,7 +100,7 @@ Vertel wat over jezelf</textarea
             <input
               type="checkbox"
               name="lookingGender"
-              value="lookingNonbin"
+              value="Non-Bin"
               id="lookingNonbin"
             />
           </div>
@@ -91,12 +109,26 @@ Vertel wat over jezelf</textarea
         <div class="container" id="age">
           <div class="fieldCluster">
             <label for="">Leeftijd tussen de</label>
-            <input type="number" class="age" min="18" max="99" />
+            <input
+              type="number"
+              class="age"
+              name="lookingforage"
+              value="<%= data.lookingforage[0]%>"
+              min="18"
+              max="99"
+            />
           </div>
 
           <div class="fieldCluster">
             <label for="">en de</label>
-            <input type="number" class="age" min="18" max="99" />
+            <input
+              type="number"
+              class="age"
+              name="lookingforage"
+              value="<%= data.lookingforage[1]%>"
+              min="18"
+              max="99"
+            />
           </div>
         </div>
 
@@ -119,7 +151,8 @@ Vertel wat over jezelf</textarea
             />
           </div>
         </section>
-
+        <label for="accountverwijderen">Account verwijderen?</label>
+        <input type="checkbox" id="accountverwijderen" name="delete" />
         <button type="submit">Opslaan</button>
       </form>
     </main>

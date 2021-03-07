@@ -5,7 +5,7 @@ require("dotenv").config();
 const url = process.env.DATABASEKEY;
 const client = new MongoClient(url);
 
-async function run() {
+export async function run() {
   try {
     await client.connect();
     console.log("Connected correctly to server");
@@ -17,3 +17,8 @@ async function run() {
 }
 
 run().catch(console.dir);
+
+export let huis = {
+  kamers: 6,
+  bedden: 4,
+};

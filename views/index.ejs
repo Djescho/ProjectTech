@@ -52,33 +52,26 @@
         <div id="profileHeader">
           <img src="./image/profilePic.jpg" alt="profile picture" />
           <div>
-            <h1>Djescho</h1>
-            <img src="" alt="gender" />
+            <h1><%= data.name %></h1>
           </div>
 
-          <h2>22</h2>
+          <h2><%= data.age %></h2>
         </div>
         <h3>Over mij</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit.
-        </p>
+        <p><%= data.description %></p>
 
         <h3>Mijn voorkeuren</h3>
         <section id="prefrences">
           <div>
             <h4>Ik ben op zoek naar een</h4>
-            <h5 class="squareButton">Man</h5>
+            <h5 class="squareButton"><%= data.lookingGender %></h5>
           </div>
           <div>
             <h4>Tussen de</h4>
             <div>
-              <h5 class="squareButton">21</h5>
+              <h5 class="squareButton"><%= data.lookingforage[0] %></h5>
               <h4>en de</h4>
-              <h5 class="squareButton">26</h5>
+              <h5 class="squareButton"><%= data.lookingforage[1] %></h5>
             </div>
           </div>
         </section>
