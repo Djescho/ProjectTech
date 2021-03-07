@@ -4,7 +4,7 @@ require("dotenv").config();
 
 let spotify = new Spotify({
   id: "d5e588b968774c59b1e8b2eebf2a8514",
-  secret: process.env.SPOTAPIKEY;
+  secret: "5c182bd48b7e40b7ab1dbd1e9577d1f1"
 });
 
 let songObject = [];
@@ -67,13 +67,6 @@ function inputLoop(inputString) {
 }
 
 inputLoop([
-  "the war on drugs pain",
-  "nicki miniaj megatron",
-  "editors magazine",
-  "roses en my sons simgm",
-  "run for cover the killers",
-  "oscar and the wolf fever",
-  "7 rings ariana grande",
-  "rhodes you a& i",
+  "7rings ariana grande"
 ]);
 // module.exports.inputLoop = inputLoop;
