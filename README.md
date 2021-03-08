@@ -46,3 +46,11 @@ Ook voor developers heb ik het zo makkelijk mogelijk gemaakt. Met de dev set-up 
 ```tsx
 npm run dev
 ```
+
+## Contributie
+
+Djescho Mananga
+
+## Licence
+
+MIT
