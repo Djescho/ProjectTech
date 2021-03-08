@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="du">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('partials/head') %>
     <link rel="stylesheet" href="../stylesheets/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    
     <!-- page title -->
-    <title>Profile</title>
+    <title>Profiel</title>
   </head>
   <body>
     <header>
+      
       <a href="/" id="closebutton"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
@@ -45,15 +41,13 @@
           </g>
         </svg>
       </a>
+      <h4>log uit</h4>
     </header>
 
     <main>
       <article>
-        <div id="profileHeader">
-          <img src="./image/profilePic.jpg" alt="profile picture" />
-          <div>
+        
             <h1><%= data.name %></h1>
-          </div>
 
           <h2><%= data.age %></h2>
         </div>

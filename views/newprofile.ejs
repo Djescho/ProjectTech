@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="du">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('partials/head') %>
+
+    <!-- page title and stylesheet-->
     <link rel="stylesheet" href="../stylesheets/form.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- page title -->
-    <title>Profile</title>
+    <title>Nieuw profiel</title>
   </head>
   <body>
     <main>
@@ -36,24 +31,7 @@
         >
 Vertel wat over jezelf</textarea
         >
-
-        <h3>Mijn geslacht</h3>
-        <div class="container" id="genderList">
-          <div class="fieldCluster">
-            <label for="man">Man</label>
-            <input type="radio" name="myGender" value="man" id="man" />
-          </div>
-
-          <div class="fieldCluster">
-            <label for="woman">Vrouw</label>
-            <input type="radio" name="myGender" value="woman" id="woman" />
-          </div>
-
-          <div class="fieldCluster">
-            <label for="nonbin">Non-binary</label>
-            <input type="radio" name="myGender" value="nonbin" id="nonbin" />
-          </div>
-        </div>
+        <%- include('partials/formgender') %>
 
         <h3>Ik ben op zoek naar</h3>
         <div class="container" id="lookingForGender">
@@ -62,7 +40,7 @@ Vertel wat over jezelf</textarea
             <input
               type="checkbox"
               name="lookingGender"
-              value=" a Man"
+              value="Man"
               id="lookingMan"
             />
           </div>
@@ -72,7 +50,7 @@ Vertel wat over jezelf</textarea
             <input
               type="checkbox"
               name="lookingGender"
-              value="a Woman"
+              value="Vrouw"
               id="lookingWoman"
             />
           </div>

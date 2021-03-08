@@ -120,3 +120,19 @@ form > button {
   font-size: 1.1em;
   font-weight: 300;
 }
+a {
+  font-family: "Alegreya Sans", "Avenir", sans-serif;
+  padding: 0.7em;
+  font-size: 0.6em;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff5e00;
+  outline: none;
+  color: white;
+  text-decoration: none;
+}
+p {
+  font-family: sans-serif;
+  margin: 1em;
+}
