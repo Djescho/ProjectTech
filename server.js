@@ -5,7 +5,7 @@ require("dotenv").config();
 //server en tamplating constante
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 const { render } = require("ejs");
 //db settings
 const dbConnetion = require("./db");
