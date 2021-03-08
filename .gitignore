@@ -9,6 +9,7 @@ lerna-debug.log*
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 # Runtime data
 spotifySearch2.js
+spotifySearch.js
 pids
 *.pid
 *.seed
