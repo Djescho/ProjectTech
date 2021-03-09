@@ -6,6 +6,10 @@ In dit project ga ik een webapp bouwen. Omdat ik verder geen codeer ervaring heb
 
 In deze app is het mogelijk een profiel aan te maken in de app. Deze wordt opgeslagen in de database en is vanaf dat moment toegankelijk en bewerkbaar. Klaar met Music Match? Je account verwijdren is zo simpel als een checkbox aanklikken.
 
+## Database model
+
+![databasemodel](./public/images/databasemodel.png)
+
 ## Achtergrond
 
 Dit project doe voor mijn tech specialisatie voor mijn opleiding CMD (Communicatie en multimedia design). Mijn doel is om een goed begrip van nodeJS, JavaScript en webdevelopment in het algemeen te krijgen.
