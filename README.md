@@ -2,11 +2,17 @@
 
 In dit project ga ik een webapp bouwen. Omdat ik verder geen codeer ervaring heb zal dit een hele opgave worden, maar dit is stap voor stap in de wiki te volgen. De matchingapp die ik ga bouwen heet MusicMatch, en wordt een matchingapp op basis van muziek smaak.
 
-![Logo](./public/images/LOGO.png)
+## Wat kan je met Music Match?
 
-### Achtergrond
+In deze app is het mogelijk een profiel aan te maken in de app. Deze wordt opgeslagen in de database en is vanaf dat moment toegankelijk en bewerkbaar. Klaar met Music Match? Je account verwijdren is zo simpel als een checkbox aanklikken.
+
+## Achtergrond
 
 Dit project doe voor mijn tech specialisatie voor mijn opleiding CMD (Communicatie en multimedia design). Mijn doel is om een goed begrip van nodeJS, JavaScript en webdevelopment in het algemeen te krijgen.
+
+### Upcomming features
+
+Spotify API support | Hiermee wordt het mogelijk jouw gekozen muziek automatisch in te laden zodra je inlogt.
 
 # Installatie
 
